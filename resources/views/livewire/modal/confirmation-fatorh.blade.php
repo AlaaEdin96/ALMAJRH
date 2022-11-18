@@ -20,7 +20,7 @@
             @forelse ($sponsers as $sponser)
 
             <div class="vs-radio-con vs-radio-success">
-                <input  wire:model="sponser_id" type="radio" name="radiocolor" value="{{$sponser->team_id}}">
+                <input  wire:model="sponser_id" type="radio" name="radiocolor" value="{{$sponser->id}}">
                 <span class="vs-radio">
                     <span class="vs-radio--border"></span>
                     <span class="vs-radio--circle"></span>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="modal-footer">
-            <button wire:click="store()" type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal">Login</button>
+            <button wire:click="store()" type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal">Save</button>
         </div>
     </form>
 </div>

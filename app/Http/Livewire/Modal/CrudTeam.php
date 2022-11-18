@@ -19,7 +19,7 @@ class CrudTeam extends ModalComponent
     {
         return view('livewire.modal.crud-team',
     [
-        'teams'=>User::all(),
+        'teams'=>User::where('role','admin')->orWhere('role','user')->get(),
     ]);
     }
 

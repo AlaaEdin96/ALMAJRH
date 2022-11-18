@@ -2,7 +2,6 @@
     <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel33">Add File </h4>
     </div>
-
     <div>
              @if (session()->has('message'))
                      <div class="alert alert-success">

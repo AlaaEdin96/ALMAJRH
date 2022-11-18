@@ -42,7 +42,7 @@
                     <div class="form-group breadcrum-right">
                         <div class="dropdown">
                             <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle waves-effect waves-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
-                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="{{ route('project.create') }}">New project</a><a class="dropdown-item" href="#">Calendar</a></div>
+                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" >New project</a><a class="dropdown-item" href="#">Calendar</a></div>
                         </div>
                     </div>
                 </div>
@@ -388,8 +388,9 @@
         <div class="col-lg-6 col-12">
           
             <div class="form-group">
+               
                 <div id="">
-                    <button  onclick='Livewire.emit("openModal", "modal.crud-fatorh", {{ json_encode(["keyimg" => 0,"images"=>$invokes]) }})' class="btn btn-block btn-primary waves-effect waves-light">اضافة فاتورة جديد</button>
+                    <button  onclick='Livewire.emit("openModal", "modal.crud-fatorh", {{ json_encode(["keyimg" => 0,"images"=>$invokes,"project_id"=>$slag]) }})' class="btn btn-block btn-primary waves-effect waves-light">اضافة فاتورة جديد</button>
                 </div>             </div>
 
 
@@ -436,7 +437,7 @@
 @if (auth()->user()->role == 'admin')
     @if ($invoke->check_user_id == null )
     <div class="d-flex flex-column flex-sm-row">
-    <button  type="button" onclick='Livewire.emit("openModal", "modal.confirmation-fatorh",{{ json_encode(["fatorh_id" => $invoke->id]) }})'  class="btn mb-1 btn-outline-primary btn-icon btn-lg btn-block waves-effect waves-light">تأكيد</button>
+    <button  type="button" onclick='Livewire.emit("openModal", "modal.confirmation-fatorh",{{ json_encode(["fatorh_id" => $invoke->id, "project_id"=>$slag]) }})'  class="btn mb-1 btn-outline-primary btn-icon btn-lg btn-block waves-effect waves-light">تأكيد</button>
      </div>
 @endif 
 @endif

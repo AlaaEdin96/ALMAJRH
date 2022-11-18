@@ -11,7 +11,9 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
+        "rappasoft/laravel-livewire-tables": "^2.8",
         "spatie/laravel-query-builder": "^5.0",
+        "stephenjude/laravel-wallet": "^0.0.5",
         "wire-elements/modal": "^1.0"
     },
     "require-dev": {
@@ -28,7 +30,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files":[
+            "app/Helpars/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

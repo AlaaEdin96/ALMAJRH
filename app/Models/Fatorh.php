@@ -15,9 +15,10 @@ class Fatorh extends Model
         'taitel',
         'creted_by_user_id',
         'mony',
-        'mission_id',
+        'task_id',
         'sponser_id',
-        'check_user_id',          
+        'check_user_id', 
+        'project_id'         
     ];
     protected  $attributes = [
        // 'status' => 0, 
@@ -28,12 +29,21 @@ class Fatorh extends Model
    
     public function user()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class,'creted_by_user_id');
+    }
+    public function project()
+    {
+        return $this->belongsTo(Projct::class,'project_id');
     }
 
     public function team()
      {
-        return $this->belongsTo(Team::class,'tem_id','id');
+        return $this->belongsTo(Team::class,'tem_id','team_id');
+     }
+
+     public function sponser()
+     {
+        return $this->belongsTo(Team::class,'sponser_id','id');
      }
      
      public function creted_by()
@@ -43,7 +53,7 @@ class Fatorh extends Model
 
      public function mission()
      {
-         return $this->belongsTo(Mission::class,'mission_id','id');
+         return $this->belongsTo(Task::class,'task_id','id');
      }
      
      public function images() {

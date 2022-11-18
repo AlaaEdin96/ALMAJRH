@@ -1,6 +1,6 @@
 <div class="modal-content">
     <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel33">New project </h4>
+        <h4 class="modal-title" id="myModalLabel33">New Task </h4>
     </div>
 
     <div>
@@ -30,9 +30,8 @@
      
 
         <div class="modal-footer">
-            <button wire:click="store()" type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal">Login</button>
-            <button wire:click='$emit("openModal", "edit-user")'>Delete User</button>
-
+            <button wire:click="store()" type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal">Save</button>
+ 
         </div>
     </form>
 </div>

@@ -15,11 +15,7 @@ class CrudProject extends ModalComponent
     public $name, $code, $compane_id,$companes;
  
  
-public function fff()
-{
-
-
-}
+ 
 
     public function render()
     {
@@ -49,7 +45,7 @@ public function fff()
             'name' => $this->name,
             'code' =>  $this->code,
             'compane_id' =>  $this->compane_id,
-            'user_id' =>  1
+            'user_id' =>  auth()->user()->id
         ]);
 
 

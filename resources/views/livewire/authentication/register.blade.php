@@ -16,7 +16,7 @@
                 <p class="px-2">Fill the below form to create a new account.</p>
                 <div class="card-content">
                     <div class="card-body pt-0">
-                        <form >
+                        
                             <div class="form-label-group">
                                 <input type="text" wire:model="name" class="form-control"   >
                                 <label for="inputName">Name</label>
@@ -98,10 +98,12 @@
                             </div>   
                             @enderror
                             
-                            <a   wire:click="store()" class="btn btn-outline-primary float-left btn-inline mb-50 waves-effect waves-light">Register</a>
-                            <button wire:click="store()" class="btn btn-primary float-right btn-inline mb-50 waves-effect waves-light">Register
+                             <button wire:click="store()" class="btn btn-primary float-right btn-inline mb-50 waves-effect waves-light">Register
                         
-                    </button></form></div>
+                    </button>
+             
+            
+            </div>
                 </div>
               
             </div>

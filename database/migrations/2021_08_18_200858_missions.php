@@ -21,7 +21,7 @@ class Missions extends Migration
             $table->dateTime('date');
             $table->timestamps();
   
-        });
+        }); 
     }
 
     /**

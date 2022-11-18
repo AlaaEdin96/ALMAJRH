@@ -4,10 +4,9 @@
                                                 <h4 class="mb-0">Create Account</h4>
                                             </div>
                                         </div>
-                                        <p class="px-2">Fill the below form to create a new account.</p>
-                                        <div class="card-content">
+                                         <div class="card-content">
                                             <div class="card-body pt-0">
-                                                <form >
+                                                 
                                                     <div class="form-label-group">
                                                         <input wire:model="name" type="text"  class="form-control" placeholder="Name" >
                                                         <label for="inputName">Name</label>
@@ -51,13 +50,49 @@
                                                                             <i class="vs-icon feather icon-check"></i>
                                                                         </span>
                                                                     </span>
-                                                                    <span class=""> I accept the terms &amp; conditions.</span>
-                                                                </div>
+                                                                 </div>
                                                             </fieldset>
+
+
+                                                            <form action="#"    class="dropzone dropzo ne-area dz-clickable dz-started" id="dataListUpload">
+                                                                <input type="file" wire:model="photos" multiple>
+                                                                @error('photos') <span class="error">{{ $message }}</span> @enderror
+                                                                   
+                                                                <div class="dz-message">رفع الصور</div>
+                                                        @forelse ($photos as $photo)
+                                                        <div class="dz-preview dz-processing dz-image-preview dz-error"> 
+                                                            <div class="dz-details"> 
+                                                                  <div class="dz-filename">
+                                                                   <span data-dz-name="">bgg.PNG</span>
+                                                               </div>  
+                                                                 <div class="dz-size" data-dz-size="">
+                                                                   <strong>1.7</strong> KiB</div>  
+                                                                     <img data-dz-thumbnail="" alt="bgg.PNG"  src="{{$photo->temporaryUrl()}}">
+                                                                     </div>  
+                                                                     <div class="dz-progress">
+                                                                       <span class="dz-upload" data-dz-uploadprogress="" style="width: 100%;">
+                                                                       </span>
+                                                                   </div> 
+                                                                    <div class="dz-success-mark">
+                                                                       <span>✔</span>
+                                                                   </div> 
+                                                                    <div class="dz-error-mark">
+                                                                       <span>✘</span></div> 
+                                                                        <div class="dz-error-message">
+                                                                           <span data-dz-errormessage="">[object Object]</span>
+                                                                       </div>
+                                                                   </div>  
+                                                        @empty
+                                                            
+                                                        @endforelse
+                                                                    </form>
+
+
+
                                                         </div>
                                                     </div>
-                                                    <button wire:click="store()" class="btn btn-primary float-right btn-inline mb-50 waves-effect waves-light">Register
+                                                    <button wire:click="store()" class="btn btn-primary float-right btn-inline mb-50 waves-effect waves-light">Save
                                                 
-                                            </button></form></div>
+                                            </button> </div>
                                         </div>
                                     </div>

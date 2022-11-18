@@ -54,12 +54,10 @@ function reteruserprojects(){
     function date(){
          $type=
         [  
-            
-
              'admin'=>  Projct::all(),
              'user'=>  $this->role == null ?[]:$this->reteruserprojects(),
              'companes'=> Projct::where('compane_id',Auth::user()->compane_id)->get(),
-
+             'sponsers'=> $this->role == null ?[]:$this->reteruserprojects(),
      ];
 
             return  $type[$this->role];

@@ -7,12 +7,23 @@ use Livewire\Component;
 
 class Profile extends Component
 {
+    public $slag;
+
     public function render()
     {
         return view('livewire.profile'
            ,[
-            'user'=>User::find(1),
+            'user'=>$this->getdata(),
            ]
     );
     }
+    private function getdata()
+    {
+         
+       if ($this->slag == 'my profile') {
+        return User::find(auth()->user()->id);
+       }
+       return User::find($this->slag);
+    }
+    
 }

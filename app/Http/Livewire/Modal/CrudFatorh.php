@@ -17,14 +17,13 @@ class CrudFatorh extends ModalComponent
 { 
 
     use WithFileUploads;
-    public $photos=[],$taitel,$mission_id,$pris;
+    public $photos=[],$taitel,$mission_id,$pris,$project_id;
     public function render()
     {
-      
         return view('livewire.modal.crud-fatorh',
         [
-            'taskes'=>Task::all(),
-            'teams'=>Team::all(),
+            'taskes'=>Task::where('hed_task_id',$this->project_id)->get(),
+            'teams'=>Team::where('project_id',$this->project_id)->get(),
         ]);
     }
 
@@ -32,20 +31,28 @@ class CrudFatorh extends ModalComponent
     public function save()
          {
 
-          
+         $time_id=Team::where([['project_id','=',$this->project_id],['team_id','=', auth()->user()->id]])->first('id');
+         if (is_null($time_id)) {
+         $this->test("لايمكن النشر انت لست من ظمن الفريق");
+         return;
+          }
+
+ 
              $this->validate([
                 'photos.*' => 'image|max:1024', // 1MB Max
                 'taitel' => 'required',
                 'pris' => 'required|integer',
                 
              ]);
-      
+
+        
              $item=  Fatorh::create([
                'tem_id'=>auth()->user()->id,
                'taitel'=>$this->taitel,
                'creted_by_user_id'=>auth()->user()->id,
                'mony'=>$this->pris,
-               'mission_id'=>$this->mission_id,
+               'task_id'=>$this->mission_id,
+               'project_id'=>$this->project_id
                ]);
 
              foreach ($this->photos as $photo) { 
@@ -58,10 +65,16 @@ class CrudFatorh extends ModalComponent
                 'parentable_type' => Fatorh::class
              ]);
              }
-
-
              $this->closeModalWithEvents([
                 Invoke::getName() => 'refresh',
             ]);
+            
+         }
+
+
+
+         public function test($text)
+         {
+            $this->emit('openModal', "modal.test",["text" =>$text]);  
          }
 }

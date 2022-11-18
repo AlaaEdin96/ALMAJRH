@@ -8,6 +8,7 @@ use App\Models\Images;
 use App\Models\Mission;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\App;
 use Livewire\WithFileUploads;
 
 class Storpost
@@ -32,6 +33,7 @@ class Storpost
      */
     public function handle($date) 
     {
+        
 
       $item =  Mission::create([
               'taitel'=> $date['taitel'],

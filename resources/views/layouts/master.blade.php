@@ -16,8 +16,8 @@
 @include('includes.footer') --}}
 
 @include('includes.header')
-{{----@include('includes.navbar')---}}
-@include('includes.aside')
+@include('includes.navbar')
+{{--@include('includes.aside')--}}
 
 
  

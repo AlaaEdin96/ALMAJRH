@@ -30,11 +30,11 @@
                         data-i18n="User">المشاريع</span></a>
                 <ul class="menu-content">
                     <li>
-                        <a href="{{ route('project.create') }}"><i class="feather icon-circle"></i><span
+                        <a href="/gg"><i class="feather icon-circle"></i><span
                                 class="menu-item" data-i18n="List">مشروع جديد</span></a>
                     </li>
                     <li>
-                        <a href="{{ route('project') }}"><i class="feather icon-circle"></i><span
+                        <a href="/oo"><i class="feather icon-circle"></i><span
                                 class="menu-item" data-i18n="View">عرض المشاريع</span></a>
                     </li>
                 </ul>
@@ -44,11 +44,11 @@
                         data-i18n="User">إعدادات النظام</span></a>
                 <ul class="menu-content">
                     <li>
-                        <a href="{{ route('company.index') }}"><i class="feather icon-circle"></i><span
+                        <a href=""><i class="feather icon-circle"></i><span
                                 class="menu-item" data-i18n="List"> الشركات</span></a>
                     </li>
                     <li>
-                        <a href="{{ route('User.index') }}"><i class="feather icon-circle"></i><span
+                        <a href=""><i class="feather icon-circle"></i><span
                                 class="menu-item" data-i18n="View"> المستخدمين</span></a>
                     </li>
                 </ul>

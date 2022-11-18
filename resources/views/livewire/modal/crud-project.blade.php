@@ -12,7 +12,7 @@
             </div>
 
 
-    <form action="#">
+  
         <div class="modal-body">
             <label>name: </label>
             <div class="form-group">
@@ -70,5 +70,5 @@
             <button wire:click="store()" type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal">Login</button>
         </div>
 
-    </form>
+    
 </div>

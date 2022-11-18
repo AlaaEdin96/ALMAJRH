@@ -33,7 +33,7 @@
      
 
         <div class="modal-footer">
-            <button wire:click="store()" type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal">Login</button>
+            <button wire:click="store()" type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal">Save</button>
         </div>
     </form>
 </div>

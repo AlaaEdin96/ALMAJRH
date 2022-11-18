@@ -18,13 +18,12 @@
                 </div>
             </div>
             <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+                @if (IsAdmin())
                 <div class="form-group breadcrum-right">
-                    <div class="dropdown">
-                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle waves-effect waves-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{ route('project.create') }}">New project</a><a class="dropdown-item" href="#">advanced search
-                        </a><a class="dropdown-item" href="#">Calendar</a></div>
-                    </div>
-                </div>
+                    <button  type="button"  class="btn mb-1 btn-outline-primary btn-icon   btn-block waves-effect waves-light" onclick='Livewire.emit("openModal", "modal.crud-project")' >Add Project</button>
+
+               </div>  
+                @endif
             </div>
         </div>
         <div class="content-body">

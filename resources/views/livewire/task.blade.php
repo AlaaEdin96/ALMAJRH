@@ -31,7 +31,7 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">..<code>{{$projct->code}}</code>..</h2>
+                        <!--deletrtr--->    <h2 class="content-header-title float-left mb-0">..<code>{{$projct->code}}</code>..</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 
                             </div>
@@ -42,6 +42,9 @@
             </div>
             <div class="content-body">
                 <!-- Basic example and Profile cards section start -->
+
+
+                
                 <section id="basic-examples">
                     <div class="row match-height">
                         
@@ -75,7 +78,7 @@
          
            @livewire('component.taskes',['project_id' => $projct->id])
 
-            @livewire('component.supporters')
+            @livewire('component.supporters',['project_id' => $projct->id])
         </div>
         <div class="col-lg-6 col-12">
 
@@ -248,11 +251,8 @@
                 </div>
             </div>
         
-
-
+            @livewire('component.project-budget', ['project_id' => $projct->id])
             @livewire('component.team',['project_id' => $projct->id])   
-
-          
             @livewire('component.file', ['project_id' => $projct->id])
 
             

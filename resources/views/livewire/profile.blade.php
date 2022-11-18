@@ -1,5 +1,10 @@
 <div class="content-body">
     <!-- page users view start -->
+
+
+
+
+    
     <section class="page-users-view">
         <div class="row">
             <!-- account start -->
@@ -59,42 +64,38 @@
             </div>
             <!-- account end -->
             <!-- information start -->
+
+
             <div class="col-md-6 col-12 ">
+                @livewire('component.wallet-user',['user_id' => $user->id]) 
+
+
+
                 <div class="card">
-                    <div class="card-header">
-                        <div class="card-title mb-2">Information</div>
+                    <div class="card-header d-flex align-items-start pb-0">
+                        <div>
+                            <h2 class="text-bold-700 mb-0">86%</h2>
+                            <p>CPU Usage</p>
+                        </div>
+                        <div class="avatar bg-rgba-primary p-50 m-0">
+                            <div class="avatar-content">
+                                <i class="feather icon-cpu text-primary font-medium-5"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <table>
-                            <tr>
-                                <td class="font-weight-bold">Birth Date </td>
-                                <td>28 January 1998
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="font-weight-bold">Mobile</td>
-                                <td>+65958951757</td>
-                            </tr>
-                            <tr>
-                                <td class="font-weight-bold">Website</td>
-                                <td>https://rowboat.com/insititious/Angelo
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="font-weight-bold">Languages</td>
-                                <td>English, Arabic
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="font-weight-bold">Gender</td>
-                                <td>female</td>
-                            </tr>
-                            <tr>
-                                <td class="font-weight-bold">Contact</td>
-                                <td>email, message, phone
-                                </td>
-                            </tr>
-                        </table>
+                </div>
+
+                <div class="card">
+                    <div class="card-header d-flex align-items-start pb-0">
+                        <div>
+                            <h2 class="text-bold-700 mb-0">86%</h2>
+                            <p>CPU Usage</p>
+                        </div>
+                        <div class="avatar bg-rgba-primary p-50 m-0">
+                            <div class="avatar-content">
+                                <i class="feather icon-cpu text-primary font-medium-5"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

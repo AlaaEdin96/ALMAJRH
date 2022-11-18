@@ -20,10 +20,7 @@
 @empty
     
 @endforelse
-<div class="form-group">
-    <button  type="button" onclick='Livewire.emit("openModal", "modal.crud-files")'  class="btn mb-1 btn-outline-primary btn-icon btn-lg btn-block waves-effect waves-light">Add File</button>
- </div>
-     
+
 
 
 
