@@ -21,6 +21,8 @@ class fackdate extends Controller
    public function date()
    {
    
+
+    
     $adem = User::create([
         'name' => 'ادم',
         'email' => 'adem@adem.adem',
