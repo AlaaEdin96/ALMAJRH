@@ -36,7 +36,7 @@ require __DIR__.'/auth.php';
  Route::group([],function(){
     // jenral route
     Route::get('/register', function () { return view('register');})->middleware('guest')->name('register');
-    //Route::get('/login', function () { return view('login');})->middleware('guest')->name('login');
+    Route::get('/login', function () { return view('login');})->middleware('guest')->name('login');
     Route::get('/', function () { return view('welcome');});
     Route::get('/404', function(){return view("404");})->name('404');
 
