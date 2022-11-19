@@ -116,7 +116,7 @@
 <p>{{$mission->taitel}}</p> 
 
 @if (count($mission->images) == 0)
-<img class="img-fluid card-img-top rounded-sm mb-2" src="../../../app-assets/images/profile/post-media/2.jpg" alt="avtar img holder">
+<img class="img-fluid card-img-top rounded-sm mb-2" src="https://media.istockphoto.com/id/924949200/vector/404-error-page-or-file-not-found-icon.jpg?s=170667a&w=0&k=20&c=gsR5TEhp1tfg-qj1DAYdghj9NfM0ldfNEMJUfAzHGtU=" alt="avtar img holder">
  
 @else
 <div  class="imgs-grid " onclick='Livewire.emit("openModal", "modal.img-test", {{ json_encode(["keyimg" => 0,"images"=>$mission->images]) }})'>
