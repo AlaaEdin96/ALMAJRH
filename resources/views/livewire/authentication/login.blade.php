@@ -11,9 +11,22 @@
                     </div>
                 </div>
                 <p class="px-2">Welcome back, please login to your account.</p>
+                
+                <div class="col-md-12">
+                    @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                </div>
                 <div class="card-content">
                     <div class="card-body pt-1">
-                        <form action="index.html">
+                      
                             <fieldset class="form-label-group form-group position-relative has-icon-left">
                                 <input type="text" class="form-control" wire:model="email" >
                                 <div class="form-control-position">
@@ -52,9 +65,8 @@
                                 </div>
                                 <div class="text-right"><a href="auth-forgot-password.html" class="card-link">Forgot Password?</a></div>
                             </div>
-                            <a href="auth-register.html" class="btn btn-outline-primary float-left btn-inline">Register</a>
-                            <button type="submit" class="btn btn-primary float-right btn-inline">Login</button>
-                        </form>
+                            <button wire:click="login()" class="btn btn-primary float-right btn-inline">Login</button>
+                       
                     </div>
                 </div>
                 <div class="login-footer">

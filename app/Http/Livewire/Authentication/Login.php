@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Authentication;
 
 use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
 class Login extends Component
@@ -14,23 +16,30 @@ class Login extends Component
         return view('livewire.authentication.login');
     }
 
-    public function rules()
+    protected $rules = [
+        'email' => 'required|email',
+            'password' => 'required',
+      ];
+
+    public function login()
     {
-        return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
-        ];
+        $this->validate();
+
+        if(Auth::attempt(array('email' => $this->email, 'password' => $this->password))){
+                session()->flash('message', "You are Login successful.");
+                return to_route('home');
+        }else{
+           
+            session()->flash('error', 'email and password are wrong.');
+                        
+        }
     }
 
-    public function store(LoginRequest $request)
-    {
-        
-        $request->authenticate();
 
-        $request->session()->regenerate();
 
-        return redirect()->intended('RouteServiceProvider::HOME');
-    }
+ 
+
+    
 
     /**
      * Destroy an authenticated session.
