@@ -122,7 +122,7 @@
 <div  class="imgs-grid " onclick='Livewire.emit("openModal", "modal.img-test", {{ json_encode(["keyimg" => 0,"images"=>$mission->images]) }})'>
     <div class="imgs-grid-image">
         <div class="image-wrap">
-            <img class="img-fluid card-img-top rounded-sm mb-2" src="{{ asset('storage/'.$mission->images[0]->url) }}" alt="avtar img holder title="">
+            <img class="img-fluid card-img-top rounded-sm mb-2" src="{{Storage::url($mission->images[0]->url) }}" alt="avtar img holder title="">
             <div class="view-all">
                 <span class="view-all-cover"></span>
                     <span class="view-all-text">View all {{count($mission->images)}} images</span>
