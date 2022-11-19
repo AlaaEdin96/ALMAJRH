@@ -10,7 +10,7 @@ class Team extends Model
     use HasFactory;
 
 
-    protected  $table = 'Teams';
+    protected  $table = 'teams';
 
     protected $fillable = [
         'team_id',

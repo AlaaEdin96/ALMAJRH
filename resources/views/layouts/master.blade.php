@@ -21,7 +21,7 @@
 
 
  
-  @include('Includes.messages')
+  {{--@include('Includes.messages')--}}
            
          @yield('content') {{--- استدعاء العنصر من livewire---}}
         
