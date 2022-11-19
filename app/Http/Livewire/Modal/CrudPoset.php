@@ -38,21 +38,37 @@ public $taskes,$teams;
            return;
            }
 
-          $post_id= event('Stor_post',[$this->getdate()],)[0];
+         
+           $post_id =  $this->creatMishen([$this->getdate()]);
+      //    $post_id= event('Stor_post',[$this->getdate()],)[0];
  
            event('Stor_imges',[$this->photos,Mission::class, $post_id,]);
    
              $this->closeModalWithEvents([
                 Task::getName() => 'refrech',
             ]);
+
          }
 
+         private function creatMishen($date)
+         {
+            
+            $item =  Mission::create([
+               'taitel'=> $date[0]['taitel'],
+               'date'=>now(),
+               'user_id'=> auth()->user()->id,
+               'body_task_id'=> $date[0]['body_task_id'],
+            ]);     
+
+            return  $item->id;
+         }
          private function getdate(){
+         
          return   $date = [
                'taitel' => $this->taitel,
                'photos' => $this->photos,
-               'mission_id' => $this->mission_id,
-               'project_id' => $this->project_id
+               'body_task_id' => $this->mission_id,
+              // 'body_task_id' => $this->body_task_id
                
           ];
          }
@@ -61,8 +77,9 @@ public $taskes,$teams;
          private function validatedate(){
             $this->validate([
                'photos.*' => 'image|max:1024', // 1MB Max
-               'mission_id' => 'required',
+             //  'mission_id' => 'required',
                'taitel' => 'required',  
+               'body_task_id'=>'required'
             ]);
          }
 

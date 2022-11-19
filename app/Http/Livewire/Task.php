@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Mission;
 use App\Models\Projct;
+use App\Models\Task as ModelsTask;
 use App\Models\Team;
 use Livewire\Component;
 
@@ -25,9 +26,9 @@ class Task extends Component
 
     private function getdate()
     {
-        $teams= Team::select('id',)->where('project_id', $this->slag)->distinct()->get('id');
-      
-         return Mission::whereIn('id',$teams)->with('images')->orderBy('id','DESC')->get();
+        //$teams= Team::select('id')->where('project_id', $this->slag)->distinct()->get('id');
+      $taskes = ModelsTask::select('id')->where('hed_task_id',$this->slag)->distinct()->get();
+         return Mission::whereIn('body_task_id',$taskes)->with('images')->orderBy('id','DESC')->get();
          
     }
 }

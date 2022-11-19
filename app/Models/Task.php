@@ -22,7 +22,7 @@ class Task extends Model
      }
      public function mission()
      {
-         return $this->hasMany(Mission::class,'hed_task_id','id');
+         return $this->hasMany(Mission::class,'body_task_id','id');
      }
  
 }
