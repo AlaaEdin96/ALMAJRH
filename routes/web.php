@@ -65,4 +65,8 @@ Route::get('/date', [fackdate::class,'date']);
 Route::get('/countt', function(){return view("count")    ;});
 
  
-
+Route::get('/test/env', function () {
+    dd('DB_DATABASE' . env('DB_DATABASE'),
+    env('name' . 'DB_USERNAME'),
+    env('DB_PASSWORR' .'DB_PASSWORR')); // Dump 'db' variable value one by one
+});
