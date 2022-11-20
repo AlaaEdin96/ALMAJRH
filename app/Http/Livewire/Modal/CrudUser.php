@@ -44,6 +44,7 @@ $user= User::create( [
 ]);
 
 $this->saveimg($user->id);
+
  $this->closeModalWithEvents([
     CrudTeam::getName() => 'refrech',
     CreatSponser::getName() => 'refrech',
@@ -60,8 +61,10 @@ $this->saveimg($user->id);
 
      private function saveimg($var)
      {
+
+ 
           Images::create([
-            'url' => str_ireplace("public","",$this->photos[0]->store('public/photos')),
+            'url' => str_ireplace("public","",$this->photos[0]->store('public')),
             'image_type' => 'image/jpg',
             'parentable_id' => $var,
             'parentable_type' => User::class

@@ -57,9 +57,9 @@ Route::middleware(['auth'])->group(function(){
     Route::middleware(['hasinvoke'])->get('/invoke/{id}', function($id){ return view("invoke",['slag'=>$id,]);})->name('invoke');
 });
 
-Route::get('/test', function(){return view("tabel")    ;});
+//Route::get('/test', function(){return view("tabel")    ;});
 
-//Route::get('/date', [fackdate::class,'date']);
+Route::get('/date', [fackdate::class,'date']);
 
 
 Route::get('/countt', function(){return view("count")    ;});

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\test;
 use App\Http\Controllers\Controller;
  
 use App\Models\Compane;
+use App\Models\Fatorh;
 use App\Models\Projct;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +23,18 @@ class fackdate extends Controller
    {
    
 
-    
+    for ($i=0 ; $i < 30 ; $i++) { 
+      Fatorh::create(
+[
+    'tem_id' => 3,
+    'taitel' => str()->random(10),
+    'creted_by_user_id' => 1,
+    'mony' => rand(100,500),
+    'task_id'=> 3,
+]
+      );
+    }
+return;
     $adem = User::create([
         'name' => 'ادم',
         'email' => 'adem@adem.adem',
