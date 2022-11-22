@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\test\fackdate;
+use App\Models\Finance;
+use App\Models\Projct;
+use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
 /**** 
@@ -49,7 +52,11 @@ Route::middleware(['auth'])->group(function(){
            Route::get('/users', function () {return view('users');});
            Route::get('/companes', function () {return view('companesindex');})->name('companes');
            Route::get('/profile/{id}', function ($id) {return view('profile',['slag'=>$id,]);})->name('profileuser');
-       });
+           Route::get('/countt', function(){
+            return view('count'); 
+          });
+       
+        });
 
     Route::get('/home', function(){return view("home");})->middleware(['auth'])->name('home');
     Route::get('/profile', function () { return view('profile',['slag'=>'my profile',]);})->name('profile');
@@ -62,7 +69,7 @@ Route::middleware(['auth'])->group(function(){
 Route::get('/date', [fackdate::class,'date']);
 
 
-Route::get('/countt', function(){return view("count")    ;});
+
 
  
  

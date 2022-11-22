@@ -18,7 +18,7 @@ class Tasks extends Migration
             $table->string('taitl');
             $table->integer('order')->default('0')->nullable();
             $table->foreignId("user_id")->constrained("users")->cascadeOnDelete();
-            $table->foreignId("hed_task_id")->constrained("projects")->cascadeOnDelete();
+            $table->foreignId("project_id")->constrained("projects")->cascadeOnDelete();
             $table->timestamps();
             
 

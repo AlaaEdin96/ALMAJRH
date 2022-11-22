@@ -13,13 +13,15 @@ class Fatorh extends Model
     protected $fillable = [
         'tem_id',
         'taitel',
-        'creted_by_user_id',
-        'mony',
         'task_id',
+        'project_id',
+        'mony',
         'sponser_id',
+        'creted_by_user_id',
         'check_user_id', 
-        'project_id'         
+        'description'  ,    
     ];
+
     protected  $attributes = [
        // 'status' => 0, 
        
@@ -31,11 +33,7 @@ class Fatorh extends Model
     {
         return $this->belongsTo(User::class,'creted_by_user_id');
     }
-    public function project()
-    {
-        return $this->belongsTo(Projct::class,'project_id');
-    }
-
+ 
     public function team()
      {
         return $this->belongsTo(Team::class,'tem_id','team_id');

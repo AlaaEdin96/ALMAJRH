@@ -16,6 +16,6 @@ class Taskes extends Component
     public function render()
     {
          
-        return view('livewire.component.taskes', ['taskes' =>Task::where('hed_task_id',$this->project_id)->get()]);
+        return view('livewire.component.taskes', ['taskes' =>Task::where('project_id',$this->project_id)->get()]);
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('fatorhs', function (Blueprint $table) {
             $table->foreignId("project_id")->nullable()->constrained("projects");//
- 
+
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('fatorhs', function (Blueprint $table) {
+        Schema::table('projects', function (Blueprint $table) {
             //
         });
     }

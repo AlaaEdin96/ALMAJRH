@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId("tem_id")->constrained("teams")->cascadeOnDelete();//  
             $table->foreignId("creted_by_user_id")->constrained("users")->cascadeOnDelete();//
-            $table->string("mony");
-            $table->foreignId("sponser_id")->nullable()->constrained("teams");//
-            $table->timestamps();
+            $table->decimal("mony", 16, 2)->default(0);
+             $table->timestamps();
+            $table->string("description")->nullable();
+
         });
     }
 

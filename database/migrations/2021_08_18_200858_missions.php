@@ -16,7 +16,7 @@ class Missions extends Migration
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained("users")->cascadeOnDelete();//
-            $table->foreignId("body_task_id")->constrained("tasks")->cascadeOnDelete();//
+            $table->foreignId("task_id")->constrained("tasks")->cascadeOnDelete();//
              $table->string('taitel');
             $table->dateTime('date');
             $table->timestamps();

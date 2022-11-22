@@ -25,7 +25,7 @@
                     <span class="vs-radio--border"></span>
                     <span class="vs-radio--circle"></span>
                 </span>
-                <span class="">{{$sponser->user->name}}</span>
+                <span class="">{{$sponser->user->name}} / {{$sponser->amount}} $ </span>
             </div>
     @empty
     @endforelse

@@ -23,18 +23,19 @@ class fackdate extends Controller
    {
    
 
-    for ($i=0 ; $i < 30 ; $i++) { 
-      Fatorh::create(
-[
-    'tem_id' => 3,
-    'taitel' => str()->random(10),
-    'creted_by_user_id' => 1,
-    'mony' => rand(100,500),
-    'task_id'=> 3,
-]
-      );
-    }
-return;
+//     for ($i=0 ; $i < 30 ; $i++) { 
+//       Fatorh::create(
+// [
+//     'tem_id' => 3,
+//     'taitel' => str()->random(10),
+//     'creted_by_user_id' => 1,
+//     'mony' => rand(100,500),
+//     'task_id'=> 3,
+// ]
+//       );
+//     }
+// return;
+
     $adem = User::create([
         'name' => 'ادم',
         'email' => 'adem@adem.adem',

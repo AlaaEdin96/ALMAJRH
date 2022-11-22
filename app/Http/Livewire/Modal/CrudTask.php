@@ -38,7 +38,7 @@ $this->validate();
  Task::create( [
     'taitl' => $this->text,
     'order' =>  0,
-    'hed_task_id' =>  $this->project_id,
+    'project_id' =>  $this->project_id,
     'user_id' =>  1
 ]);
  $this->resetInput();

@@ -437,7 +437,7 @@
 @if (auth()->user()->role == 'admin')
     @if ($invoke->check_user_id == null )
     <div class="d-flex flex-column flex-sm-row">
-    <button  type="button" onclick='Livewire.emit("openModal", "modal.confirmation-fatorh",{{ json_encode(["fatorh_id" => $invoke->id, "project_id"=>$slag]) }})'  class="btn mb-1 btn-outline-primary btn-icon btn-lg btn-block waves-effect waves-light">تأكيد</button>
+    <button  type="button" onclick='Livewire.emit("openModal", "modal.confirmation-fatorh",{{ json_encode(["fatorh_id" => $invoke->id,"tem_id" => $invoke->tem_id, "project_id"=>$slag]) }})'  class="btn mb-1 btn-outline-primary btn-icon btn-lg btn-block waves-effect waves-light">تأكيد</button>
      </div>
 @endif 
 @endif

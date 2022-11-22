@@ -16,15 +16,16 @@ return new class extends Migration
 
         Schema::create('fatorhs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("tem_id")->constrained("users")->cascadeOnDelete();//  
-            $table->foreignId("creted_by_user_id")->constrained("users")->cascadeOnDelete();//
-            $table->string("mony");
+            $table->foreignId("tem_id")->constrained("teams")->cascadeOnDelete();//  
             $table->string("taitel")->nullable();
             $table->foreignId("task_id")->constrained("tasks");//
+            $table->decimal("mony", 16, 2)->default(0);
             $table->foreignId("sponser_id")->nullable()->constrained("teams");//
-            $table->foreignId("check_user_id")->nullable()->constrained("users")->cascadeOnDelete();//
-
             $table->timestamps();
+            $table->foreignId("creted_by_user_id")->constrained("users")->cascadeOnDelete();//
+            $table->foreignId("check_user_id")->nullable()->constrained("users")->cascadeOnDelete();//
+            $table->string("description")->nullable();
+
         });
     }
 

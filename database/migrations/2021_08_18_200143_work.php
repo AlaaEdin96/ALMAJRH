@@ -16,7 +16,7 @@ class Work extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->id();
             $table->foreignId("creted_by_user_id")->constrained("users")->cascadeOnDelete();//
-            $table->foreignId("hed_task_id")->constrained("projects")->cascadeOnDelete();//
+            $table->foreignId("project_id")->constrained("projects")->cascadeOnDelete();//
             $table->string('lociton');
             $table->longText('imag');
             $table->dateTime ('work_end');

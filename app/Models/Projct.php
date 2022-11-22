@@ -38,32 +38,15 @@ class Projct extends Model
         );
      }
 
-    
-
-     
-    public function SupporterMoney()
-    {
-        return $this->hasManyDeep(SupportersHasTaskesMoney::class, [SupportersHasTaskes::class],
-        [
-            'hed_task_id', // Foreign key on the "users" table.
-            'supporters_has_taskes_id'     // Foreign key on the "comments" table.
-         ],
-         [
-           'id', // Local key on the "countries" table.
-           'id', // Local key on the "users" table.
-          ]
-    
-    );
-    }
-
-    public function supporter()
-    {
-        return $this->hasMany(SupportersHasTaskes::class,'hed_task_id','id');
-    }
-
+ 
     public function user()
     {
         return $this->belongsTo(User::class,'user_id','id');
+    }
+
+    public function taskes()
+    {
+        return $this->hasMany(Task::class,'project_id');
     }
      
  

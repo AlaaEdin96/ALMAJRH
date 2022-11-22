@@ -27,8 +27,8 @@ class Task extends Component
     private function getdate()
     {
         //$teams= Team::select('id')->where('project_id', $this->slag)->distinct()->get('id');
-      $taskes = ModelsTask::select('id')->where('hed_task_id',$this->slag)->distinct()->get();
-         return Mission::whereIn('body_task_id',$taskes)->with('images')->orderBy('id','DESC')->get();
-         
+      $taskes = ModelsTask::select('id')->where('project_id',$this->slag)->distinct()->get();
+       // Mission::whereIn('project_id',$taskes)->with('images')->orderBy('id','DESC')->get();
+        return Mission::all();
     }
 }

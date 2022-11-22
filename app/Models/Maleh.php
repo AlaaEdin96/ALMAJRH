@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Maleh extends Model
 {
+    
     use HasFactory;
     protected  $table = 'malehs';
     protected $fillable = [
         'tem_id',
         'creted_by_user_id',
         'mony',
-        'sponser_id',
+        'description'  , 
      ];
 
      public function team()

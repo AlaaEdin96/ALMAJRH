@@ -17,7 +17,7 @@ class ConfirmationFatorh extends ModalComponent
 {
  use AccountStatementTrait;
 
-    public $sponser_id,$fatorh_id,$project_id;
+    public $sponser_id,$fatorh_id,$project_id,$tem_id;
 
     public function render()
     {
@@ -39,8 +39,17 @@ $this->validate();
   
  
 $fatorh = $this->UpdateFatorh();
-$this->logAccountStatement($fatorh->mony,$fatorh->team->user->name,$fatorh->sponser->user->name,"فاتوره",$fatorh->id,$fatorh->project->code);
-$fatorh->team->user->withdraw($fatorh->mony);
+
+$time =Team::find($this->tem_id);
+//Team::where([['project_id','=',$this->project_id],['team_id','=', $this->tem_id]])->first();
+ 
+$time->deposit_descount($fatorh->mony);
+
+//$this->logAccountStatement($fatorh->mony,$fatorh->team->user->name,$fatorh->sponser->user->name,"فاتوره",$fatorh->id,$fatorh->project->code);
+
+
+$time->user->withdraw($fatorh->mony);
+$fatorh->sponser->deposit_descount($fatorh->mony);
 $fatorh->sponser->user->withdraw($fatorh->mony);
    
 

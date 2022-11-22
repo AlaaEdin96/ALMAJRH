@@ -18,11 +18,12 @@ class CrudFatorh extends ModalComponent
 
     use WithFileUploads;
     public $photos=[],$taitel,$mission_id,$pris,$project_id;
+    private $time_id;
     public function render()
     {
         return view('livewire.modal.crud-fatorh',
         [
-            'taskes'=>Task::where('hed_task_id',$this->project_id)->get(),
+            'taskes'=>Task::where('project_id',$this->project_id)->get(),
             'teams'=>Team::where('project_id',$this->project_id)->get(),
         ]);
     }
@@ -31,8 +32,8 @@ class CrudFatorh extends ModalComponent
     public function save()
          {
 
-         $time_id=Team::where([['project_id','=',$this->project_id],['team_id','=', auth()->user()->id]])->first('id');
-         if (is_null($time_id)) {
+         $this->time_id =Team::where([['project_id','=',$this->project_id],['team_id','=', auth()->user()->id]])->first('id');
+         if (is_null($this->time_id)) {
          $this->test("لايمكن النشر انت لست من ظمن الفريق");
          return;
           }
@@ -45,9 +46,9 @@ class CrudFatorh extends ModalComponent
                 
              ]);
 
-        
+             
              $item=  Fatorh::create([
-               'tem_id'=>auth()->user()->id,
+               'tem_id'=>$this->time_id->id,
                'taitel'=>$this->taitel,
                'creted_by_user_id'=>auth()->user()->id,
                'mony'=>$this->pris,

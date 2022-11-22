@@ -13,7 +13,7 @@ class Task extends Model
         'taitl',
         'order',
         'user_id',
-        'hed_task_id',
+        'project_id',
      ];
 
      public function fatorh()

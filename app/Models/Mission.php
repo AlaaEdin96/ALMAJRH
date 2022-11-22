@@ -17,12 +17,12 @@ class Mission extends Model
         'taitel',
         'date',
         'user_id',
-        'body_task_id',
+        'task_id',
         
      ];
      public function task()
      {
-         return $this->belongsTo(Task::class,'body_task_id');
+         return $this->belongsTo(Task::class,'task_id');
      }
 
      public function user()

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subventions extends Model
+class Finance extends Model
 {
 //المودل خاص بالاموال الي عاطينها الداعيمين لتمويل المشاريع
 
@@ -16,7 +16,8 @@ class Subventions extends Model
         'tem_id',
         'creted_by_user_id',
         'mony',
-        'sponser_id'
+        'description',
+        'tayp'
      ];
 
   
@@ -31,4 +32,20 @@ class Subventions extends Model
          return $this->belongsTo(User::class,'creted_by_user_id','id');
      }
 
+
+     public function getTotalAttribute() 
+{
+    return    $this->ohda - $this->mablg  ;
+}
+
+
+public function getOhdaAttribute() 
+{
+    return  $this->where('tayp','عهدة')->sum('mony');
+}
+
+public function getMablgAttribute() 
+{
+    return   $this->where('tayp','مبلغ')->sum('mony');
+}
 }

@@ -21,6 +21,9 @@ return new class extends Migration
             $table->foreignId("creted_by_user_id")->constrained("users")->cascadeOnDelete();//
             $table->foreignId("project_id")->constrained("projects")->cascadeOnDelete();//
             $table->string('tayp');
+            $table->decimal("wallet_balance", 16, 2)->default(0);
+            $table->decimal("discounts_balance", 16, 2)->default(0);
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
