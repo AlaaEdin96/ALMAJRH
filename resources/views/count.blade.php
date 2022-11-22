@@ -313,7 +313,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row match-height">
                         @livewire('component.filtar-mony')
                        @livewire('component.treasury')
                     </div>
