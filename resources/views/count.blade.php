@@ -314,8 +314,8 @@
                         </div>
                     </div>
                     <div class="row">
+                        @livewire('component.filtar-mony')
                        @livewire('component.treasury')
-                       @livewire('component.filtar-mony')
                     </div>
                    @livewire('tabele.countent')
                 
