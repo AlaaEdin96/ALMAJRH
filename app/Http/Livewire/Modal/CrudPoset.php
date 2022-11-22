@@ -57,7 +57,7 @@ public $taskes,$teams;
                'taitel'=> $date[0]['taitel'],
                'date'=>now(),
                'user_id'=> auth()->user()->id,
-               'body_task_id'=> $date[0]['body_task_id'],
+               'task_id'=> $date[0]['body_task_id'],
             ]);     
 
             return  $item->id;
