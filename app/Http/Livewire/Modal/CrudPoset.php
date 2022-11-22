@@ -17,7 +17,7 @@ public $taskes,$teams;
 
     public function mount()
     {
-        $this->taskes = ModelsTask::where('hed_task_id',$this->project_id)->get();
+        $this->taskes = ModelsTask::where('project_id',$this->project_id)->get();
         $this->teams =Team::where('project_id',$this->project_id)->get();
     }
 

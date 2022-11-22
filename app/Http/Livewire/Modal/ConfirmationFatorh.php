@@ -49,7 +49,7 @@ $time->deposit_descount($fatorh->mony);
 
 
 $time->user->withdraw($fatorh->mony);
-$fatorh->sponser->deposit_descount($fatorh->mony);
+//$fatorh->sponser->deposit_descount($fatorh->mony);
 $fatorh->sponser->user->withdraw($fatorh->mony);
    
 

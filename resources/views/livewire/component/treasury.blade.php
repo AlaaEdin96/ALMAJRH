@@ -1,7 +1,7 @@
 <div class="col-md-6 col-12">
     <div class="card">
         <div class="card-header d-flex justify-content-between pb-0">
-            <h4 class="card-title">Support </h4>
+            <h4 class="card-title">الخزينة </h4>
             <div class="dropdown chart-dropdown">
                 <button class="btn btn-sm border-0 dropdown-toggle p-0" type="button" id="dropdownItem4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Last 7 Days

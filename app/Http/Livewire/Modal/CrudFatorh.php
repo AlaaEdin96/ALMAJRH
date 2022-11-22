@@ -57,7 +57,7 @@ class CrudFatorh extends ModalComponent
                ]);
 
              foreach ($this->photos as $photo) { 
-                $phat=$photo->store('public/photos');
+                $phat=$photo->store('public');
              
               Images::create([
                 'url' => str_ireplace("public","",$phat),
