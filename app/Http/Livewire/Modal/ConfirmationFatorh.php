@@ -43,13 +43,13 @@ $fatorh = $this->UpdateFatorh();
 $time =Team::find($this->tem_id);
 //Team::where([['project_id','=',$this->project_id],['team_id','=', $this->tem_id]])->first();
  
-$time->deposit_descount($fatorh->mony);
+//v1 $time->deposit_descount($fatorh->mony);
 
 //$this->logAccountStatement($fatorh->mony,$fatorh->team->user->name,$fatorh->sponser->user->name,"فاتوره",$fatorh->id,$fatorh->project->code);
 
 
 $time->user->withdraw($fatorh->mony);
-//$fatorh->sponser->deposit_descount($fatorh->mony);
+//v1 $fatorh->sponser->deposit_descount($fatorh->mony);
 $fatorh->sponser->user->withdraw($fatorh->mony);
    
 
