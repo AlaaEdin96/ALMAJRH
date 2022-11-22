@@ -1,4 +1,23 @@
 <div class="row  ">
+<h1></h1>
+    @if ($this->project==null)
+    <div class="card">
+        
+        <div class="card-content">
+            <div class="card-body pt-0">
+                <div class="row">
+                    <div class="col-sm-2 col-12 d-flex flex-column flex-wrap text-center">
+                        <h1 class="font-large-2 text-bold-700 mt-2 mb-0">No date</h1>
+                    </div>
+                    <div class="col-sm-10 col-12 d-flex justify-content-center">
+                        <div id="support-tracker-chart"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    @else
     <div class="col-lg-4 col-12">
         <div class="card">
             <div class="card-header d-flex justify-content-between pb-0">
@@ -138,5 +157,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
+    @endif
+ 
 </div>

@@ -9,19 +9,14 @@ class Countent extends Component
 {
 
     protected $listeners = ['Filtar' => 'get_date'];
-    public $project= null;
-
-
-    private $objFoo;
-
- 
+    public $project= null; 
     public function mount()
     {
 
 
       if ($this->project == null) {
          $this->project=Team::with(['finances','fatorhs'])->first();
-
+ 
         }
     }
 
