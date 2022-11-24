@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Compane;
 use App\Models\Fatorh;
 use App\Models\Projct;
+use App\Models\Task;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -57,9 +59,9 @@ class fackdate extends Controller
     ]);
 
 
-    $osamah = User::create([
-        'name' => 'اسامه',
-        'email' => 'o@o.o',
+    $ali = User::create([
+        'name' => 'ali',
+        'email' => 'ali@ali.ali',
         'password' => Hash::make($this->password),
         'creted_by_user_id'=>1,
         'role'=>$this->user  
@@ -116,6 +118,33 @@ class fackdate extends Controller
                     'compane_id' =>  $almdar->id,
                     'user_id' =>  1
                 ]);
+
+              $task1=  Task::create( [
+                    'taitl' => 'معاينة المكان',
+                    'order' =>  0,
+                    'project_id' =>  $LY22->id,
+                    'user_id' =>  1
+                ]);
+
+              $ali_team=  Team::create( [
+
+                    'team_id' =>$ali->id,
+                    'project_id' =>$LY22->id,
+                    'creted_by_user_id' =>1,
+                    'tayp' => 'worker',
+                ]);
+
+
+               for ($i=0; $i < 7; $i++) { 
+                $Fatorh=  Fatorh::create([
+                    'tem_id'=>$ali_team->id,
+                    'taitel'=>'عنوان عنوان',
+                    'creted_by_user_id'=>1,
+                    'mony'=>rand(50,1200),
+                    'task_id'=>$task1->id,
+                    'project_id'=>$LY22->id
+                    ]);
+               }
 
 return '200';
 

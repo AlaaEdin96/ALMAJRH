@@ -69,16 +69,6 @@ Route::middleware(['auth'])->group(function(){
 Route::get('/date', [fackdate::class,'date']);
 
 
-Route::get('/test', function()
-{
-    $valid = 'budgets,bills,piggy_banks,rules,recurring,categories,tags,object_groups' .
-    ',accounts,asset_accounts,expense_accounts,revenue_accounts,liabilities,transactions,withdrawals,deposits,transfers';
-
-dd( [
-'objects' => sprintf('required|min:1|string|in:%s', $valid),
-]);
-
-});
 
 
  
