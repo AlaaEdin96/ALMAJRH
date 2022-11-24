@@ -35,7 +35,13 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+   
     @livewireStyles
+ 
 </head>
 <!-- END: Head-->
 
@@ -364,6 +370,7 @@
     <script src="../../../app-assets/js/scripts/datatables/datatable.js"></script>
     <!-- END: Page JS-->
     @livewireScripts
+    @livewire('livewire-ui-modal')
 </body>
 <!-- END: Body-->
 

@@ -30,8 +30,9 @@
                        </div> 
 
 
+                        <a  wire:click='$emit("openModal", "modal.mohsabh")' class="btn btn-outline-primary shadow waves-effect waves-light">محاسبة <i class="feather icon-chevrons-right"></i></a>
 
-                    <a  wire:click="filter()" class="btn btn-primary shadow waves-effect waves-light">بحت <i class="feather icon-chevrons-right"></i></a>
+                       <a  wire:click="filter()" class="btn btn-outline-primary shadow waves-effect waves-light">بحت <i class="feather icon-chevrons-right"></i></a>
                 </div>
             </div>
         </div>

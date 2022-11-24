@@ -57,5 +57,8 @@ class Fatorh extends Model
      public function images() {
         return $this->morphMany(Images::class, 'parentable');
       }
+
+
+ 
     
 }
